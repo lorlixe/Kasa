@@ -1,0 +1,27 @@
+.nav {
+   display: flex;
+   justify-content: space-between;
+}
+
+.logo {
+   height: 2.5em;
+}
+ul {
+   display: flex;
+   justify-content: space-between;
+}
+
+li {
+   list-style: none;
+   width: 5em;
+   font: 1.2em 'Montserrat', sans-serif;
+   color: #ff6060;
+}
+
+li:hover {
+   text-decoration: underline;
+}
+
+a {
+   text-decoration: none;
+}
