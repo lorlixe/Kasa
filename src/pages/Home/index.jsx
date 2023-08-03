@@ -1,20 +1,20 @@
 import axios from "axios";
 import Location from "../../components/Location";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [logement, setLogement] = useState([]);
-
-  //   axios
-  //     .get(
-  //       "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json"
-  //     )
-  //     .then(({ data }) => {
-  //       setLogement(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
+  useEffect(() => {
+    axios
+      .get("/alldata.json")
+      .then((res) => {
+        console.log(res);
+        setLogement(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className="App">
@@ -22,10 +22,11 @@ function App() {
         <div className="shadow">
           <h2>Chez vous, partout et ailleurs</h2>
         </div>
-      </div>
+      </div>{" "}
       <div className="grille">
-        {logement.map((i, index) => {})}
-        <Location />
+        {logement.map((i, index) => (
+          <Location info={i} />
+        ))}
       </div>
     </div>
   );

@@ -1,0 +1,46 @@
+.FirstSection {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.FicheInformation {
+  color: #ff6060;
+}
+
+.FicheTilte {
+  font-size: large;
+  margin: 5% 0;
+}
+.Profil {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: end;
+}
+.NameAndPicture {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.ProfilPicture {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.Star {
+  font-size: 2em;
+  color: #d0d0d0;
+}
+
+.DropdownSection {
+  display: flex;
+  width: 100%;
+  align-content: space-between;
+}
+
+.Drop {
+  width: 100%;
+}

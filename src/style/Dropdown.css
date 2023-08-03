@@ -1,0 +1,28 @@
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff6060;
+  color: #ffffff;
+  border-radius: 10px;
+  width: 100%;
+  height: 35px;
+}
+h4,
+.arrow {
+  margin: 5%;
+  width: 2%;
+}
+.description {
+  text-align: justify;
+  padding: 5% 4% 5% 4%;
+  height: auto;
+  color: #ff6060;
+  background: #f6f6f6;
+  width: 92%;
+  border-radius: 0 0 10px 10px;
+}
+
+.dropdown {
+  margin: 5%;
+}
