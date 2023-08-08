@@ -8,7 +8,6 @@ const Location = (props) => {
   useEffect(() => {
     if (isOpen === true) {
       navigate(`/Logement/${props.info.id}`);
-      console.log("true");
     }
   }, [isOpen]);
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import Location from "../../components/Location";
+import Location from "../components/Location";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
       </div>{" "}
       <div className="grille">
         {logement.map((i, index) => (
-          <Location info={i} />
+          <Location info={i} key={index} />
         ))}
       </div>
     </div>

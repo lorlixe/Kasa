@@ -1,6 +1,6 @@
 import React from "react";
-import Dropdown from "../../components/Dropdown";
-import "../../style/Apropos.css";
+import Dropdown from "../components/Dropdown";
+import "../style/Apropos.css";
 const APropos = () => {
   return (
     <div>

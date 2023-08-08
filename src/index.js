@@ -1,25 +1,17 @@
 import React from "react";
 
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/";
-import Error from "./pages/error";
+import App from "./App";
 import Nav from "./components/Nav";
-import FicheLogement from "./pages/FicheLogement";
-import APropos from "./pages/A-propos/APropos";
-import "../src/style/index.css";
-const root = ReactDOM.createRoot(document.getElementById("root"));
 
+import { BrowserRouter } from "react-router-dom";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/a_propos" element={<APropos />} />
-        <Route path="/Logement/:id" element={<FicheLogement />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </Router>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

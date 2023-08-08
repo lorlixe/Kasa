@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../style/Dropdown.css";
-const Dropdow = (data) => {
+const List = (data) => {
   const [isOpen, setIsOpen] = useState(false);
+  const equipments = data.equipments;
   function click() {
     if (isOpen === false) {
       setIsOpen(true);
@@ -20,9 +21,15 @@ const Dropdow = (data) => {
         )}
       </div>
 
-      {isOpen && <div className="description">{data.description}</div>}
+      {isOpen && (
+        <ul className="description">
+          {data.equipments.map((i, index) => (
+            <li className="equipement">{i}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
-export default Dropdow;
+export default List;
