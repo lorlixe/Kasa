@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Caroussel from "../components/Caroussel";
+import Slideshow from "../components/Slideshow";
 import Tag from "../components/Tag";
 import "../style/FicheLogement.css";
 import { Icon } from "@iconify/react";
@@ -7,35 +7,46 @@ import Dropdown from "../components/Dropdown";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import List from "../components/List";
+import { useNavigate } from "react-router-dom";
 
 const FicheLogement = () => {
   const params = useParams();
-  const [dataArray, setDataArray] = useState([]);
   const [OneData, setOneData] = useState([]);
   const itemToShow = params.id;
+  const OrangeStar = [];
+  const GrayStar = [];
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get("/alldata.json")
-      .then((res) => {
-        if (dataArray.length === 0) {
-          setDataArray(res.data);
+      .then(({ data }) => {
+        const findData = data.filter((item) => item.id === itemToShow);
+        if (findData.length !== 0) {
+          setOneData(findData);
+        } else {
+          navigate("/error");
         }
-        const x = dataArray.filter((item) => item.id === itemToShow);
-        setOneData(x);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
-  }, [dataArray]);
+  }, [itemToShow]);
 
-  console.log(OneData);
+  if (OneData.length > 0) {
+    const star = parseInt(OneData[0].rating, 10);
+    for (let i = 0; i < star; i++) {
+      OrangeStar.push("*");
+    }
+    for (let i = 0; i < 5 - OrangeStar.length; i++) {
+      GrayStar.push("*");
+    }
+  }
   return (
     <div>
       {OneData.length > 0 && (
         <div>
-          <Caroussel data={OneData[0]} />
-
+          <Slideshow data={OneData[0]} />
           <div className="FirstSection">
             <div className="FicheInformation">
               <h1 className="FicheTilte">{OneData[0].title}</h1>
@@ -55,13 +66,13 @@ const FicheLogement = () => {
                   alt="cover"
                 />
               </div>
-
               <div className="Star">
-                <Icon icon="typcn:star" />
-                <Icon icon="typcn:star" />
-                <Icon icon="typcn:star" />
-                <Icon icon="typcn:star" />
-                <Icon icon="typcn:star" />
+                {OrangeStar.map((i, index) => (
+                  <Icon key={index} className="OrangeStar" icon="typcn:star" />
+                ))}
+                {GrayStar.map((i, index) => (
+                  <Icon key={index} icon="typcn:star" />
+                ))}
               </div>
             </div>
           </div>

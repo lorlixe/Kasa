@@ -6,7 +6,6 @@ import Error from "./pages/Error";
 import FicheLogement from "./pages/FicheLogement";
 import APropos from "./pages/APropos";
 
-import "../src/style/index.css";
 const App = () => {
   return (
     <Routes>

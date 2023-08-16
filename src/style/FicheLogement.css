@@ -27,13 +27,16 @@
 }
 
 .ProfilPicture {
-  width: 40%;
+  width: 5em;
   border-radius: 50%;
 }
 
 .Star {
   font-size: 2em;
   color: #d0d0d0;
+}
+.OrangeStar {
+  color: #ff6060;
 }
 
 .DropdownSection {

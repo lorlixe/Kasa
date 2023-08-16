@@ -8,7 +8,6 @@ function App() {
     axios
       .get("/alldata.json")
       .then((res) => {
-        console.log(res);
         setLogement(res.data);
       })
       .catch((err) => {

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../style/Dropdown.css";
+import "../style/List.css";
+
 const List = (data) => {
   const [isOpen, setIsOpen] = useState(false);
   const equipments = data.equipments;
@@ -22,9 +24,11 @@ const List = (data) => {
       </div>
 
       {isOpen && (
-        <ul className="description">
+        <ul className="list">
           {data.equipments.map((i, index) => (
-            <li className="equipement">{i}</li>
+            <li className="equipement" key={index}>
+              {i}
+            </li>
           ))}
         </ul>
       )}
