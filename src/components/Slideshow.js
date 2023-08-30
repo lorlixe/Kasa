@@ -5,15 +5,12 @@ import { Icon } from "@iconify/react";
 const Slideshow = (props) => {
   const [countCaroussel, setCountCaroussel] = useState(0);
   const ArrayPicture = props.data.pictures;
-  const [showArrowRigth, setShowArrowRigth] = useState(true);
-  const [showArrowLeft, setShowArrowLeft] = useState(false);
 
   function Rigth() {
     if (countCaroussel < ArrayPicture.length - 1) {
       setCountCaroussel(countCaroussel + 1);
-      setShowArrowLeft(true);
     } else {
-      setShowArrowRigth(false);
+      setCountCaroussel(0);
     }
     console.log(countCaroussel);
   }
@@ -21,9 +18,8 @@ const Slideshow = (props) => {
   function Left() {
     if (countCaroussel > 0) {
       setCountCaroussel(countCaroussel - 1);
-      setShowArrowRigth(true);
     } else {
-      setShowArrowLeft(false);
+      setCountCaroussel(ArrayPicture.length - 1);
     }
     console.log(countCaroussel);
   }
@@ -31,27 +27,24 @@ const Slideshow = (props) => {
   return (
     <div className="SectionCarrousel">
       <div className="Carrousel">
-        {showArrowLeft && (
+        <div class="Slider_control">
           <Icon
             className="CarrouselArrow"
-            icon="gridicons:arrow-right"
+            icon="tabler:chevron-right"
             rotate={2}
             onClick={Left}
           />
-        )}
-
+          <Icon
+            className="CarrouselArrow"
+            icon="tabler:chevron-right"
+            onClick={Rigth}
+          />
+        </div>
         <img
           className="imgCaroussel"
           src={props.data.pictures[countCaroussel]}
           alt={props.data.title}
         />
-        {showArrowRigth && (
-          <Icon
-            className="CarrouselArrow"
-            icon="gridicons:arrow-right"
-            onClick={Rigth}
-          />
-        )}
       </div>
     </div>
   );

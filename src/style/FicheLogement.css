@@ -1,7 +1,8 @@
 .FirstSection {
-  margin-top: 5%;
+  margin-top: 2%;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .FicheInformation {
@@ -9,13 +10,19 @@
 }
 
 .FicheTilte {
-  font-size: large;
-  margin: 5% 0;
+  font-size: 35px;
+  margin: 5% 0 5% 0;
+}
+
+.SubTilte {
+  color: #ff6060;
+  font-size: 18px;
+  margin: 0.2rem 0 1rem;
 }
 .Profil {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 11em;
   align-items: flex-end;
   color: #ff6060;
 }
@@ -23,16 +30,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 40%;
+  width: 99%;
+}
+
+.Name {
+  text-align: right;
+  font-size: 18px;
+  margin-right: 0.5rem;
 }
 
 .ProfilPicture {
-  width: 5em;
+  width: 3.6rem;
   border-radius: 50%;
 }
 
 .Star {
-  font-size: 2em;
+  font-size: 26px;
   color: #d0d0d0;
 }
 .OrangeStar {
@@ -43,6 +56,11 @@
   display: flex;
   width: 100%;
   align-content: space-between;
+  height: 100%;
+}
+
+.Drop:first-child {
+  margin-right: 2em;
 }
 
 .Drop {
@@ -52,4 +70,38 @@
 .tag-section {
   display: flex;
   width: auto;
+}
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+  .DropdownSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .Drop:first-child {
+    margin-right: 0em;
+  }
+  .FirstSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .Profil {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: center;
+    color: #ff6060;
+    justify-content: space-between;
+  }
+  .NameAndPicture {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10.4em;
+  }
+  .FicheTilte {
+    font-size: 20px;
+    margin: 2% 0 2% 0;
+  }
 }

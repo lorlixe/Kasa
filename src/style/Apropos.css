@@ -8,3 +8,15 @@
   border-radius: 25px;
   margin: 30px 0;
 }
+
+.menus {
+  width: 80%;
+  margin: 0 10% 0 10%;
+}
+/* responsive */
+@media screen and (max-width: 768px) {
+  .menus {
+    width: 100%;
+    margin: 0;
+  }
+}

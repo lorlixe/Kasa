@@ -50,7 +50,7 @@ const FicheLogement = () => {
           <div className="FirstSection">
             <div className="FicheInformation">
               <h1 className="FicheTilte">{OneData[0].title}</h1>
-              <p>{OneData[0].location}</p>
+              <h2 className="SubTilte">{OneData[0].location}</h2>
               <div className="tag-section">
                 {OneData[0].tags.map((i, index) => (
                   <Tag info={i} key={index} />

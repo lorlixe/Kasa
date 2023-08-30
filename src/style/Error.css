@@ -5,16 +5,27 @@
   color: #ff6060;
 }
 
+.message {
+  text-align: center;
+}
+
 .errorTitle {
   font-size: 15em;
-  margin: 10%;
+  margin: 5%;
 }
 
-a {
+.back {
   list-style: none;
   color: #ff6060;
+  margin: 1em;
 }
 
-a:hover {
+.back:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .errorTitle {
+    font-size: 10em;
+  }
 }

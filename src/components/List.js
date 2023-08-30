@@ -4,12 +4,17 @@ import "../style/List.css";
 
 const List = (data) => {
   const [isOpen, setIsOpen] = useState(false);
-  const equipments = data.equipments;
+  const [isClick, setIsClick] = useState("");
+  const [isShow, setIsShow] = useState("");
+
   function click() {
     if (isOpen === false) {
       setIsOpen(true);
+      setIsClick("-cliked");
+      setIsShow("show");
     } else {
       setIsOpen(false);
+      setIsShow("");
     }
   }
 
@@ -17,13 +22,18 @@ const List = (data) => {
     <div className="dropdown">
       <div className="title" onClick={click}>
         <h4>{data.title}</h4>
-        {isOpen && <img className="arrow" src="/arrow.png" alt="arrow-up" />}
         {!isOpen && (
-          <img className="arrow" src="/arrow-down.png" alt="arrow-up" />
+          <img className={"arrow" + isClick} src="/arrow.png" alt="arrow-up" />
+        )}
+        {isOpen && (
+          <img
+            className={"arrow" + isClick}
+            src="/arrow-down.png"
+            alt="arrow-down"
+          />
         )}
       </div>
-
-      {isOpen && (
+      <div className={"collapse " + isShow}>
         <ul className="list">
           {data.equipments.map((i, index) => (
             <li className="equipement" key={index}>
@@ -31,7 +41,7 @@ const List = (data) => {
             </li>
           ))}
         </ul>
-      )}
+      </div>
     </div>
   );
 };

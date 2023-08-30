@@ -4,7 +4,7 @@
 }
 
 .logo {
-  height: 2.5em;
+  width: 7em;
 }
 .menu-nav {
   display: flex;
@@ -13,15 +13,28 @@
 
 .option {
   list-style: none;
-  width: 5em;
+  width: 80px;
   font: 1.2em "Montserrat", sans-serif;
   color: #ff6060;
+  text-underline-offset: 0.4em;
+  text-decoration: underline;
+  text-decoration-color: white;
+
+  transition: text-decoration-color 200ms;
 }
 
 .option:hover {
   text-decoration: underline;
+  text-decoration-color: #ff6060;
 }
 
 a {
   text-decoration: none;
+}
+@media screen and (max-width: 370px) {
+  .menu-nav {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
 }

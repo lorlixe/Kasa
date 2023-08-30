@@ -24,7 +24,9 @@ const Location = (props) => {
       <div className="location" onClick={click}>
         <div className="background">
           <img className="img" src={props.info.cover} alt={props.info.title} />
-          <p className="ThumTitle">{props.info.title}</p>
+          <div className="ThumbDetail">
+            <p className="ThumTitle">{props.info.title}</p>
+          </div>
         </div>
       </div>
     </div>

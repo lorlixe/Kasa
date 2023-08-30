@@ -4,25 +4,86 @@
   align-items: center;
   background: #ff6060;
   color: #ffffff;
-  border-radius: 10px;
+  border-radius: 3px;
   width: 100%;
   height: 35px;
+  position: relative;
+  z-index: 50;
 }
 h4,
 .arrow {
-  margin: 5%;
-  width: 2%;
-}
-.description {
-  text-align: justify;
-  padding: 5% 4% 5% 4%;
-  height: auto;
-  color: #ff6060;
-  background: #f6f6f6;
-  width: 92%;
-  border-radius: 0 0 10px 10px;
+  margin: 3%;
+  width: 1.5em;
 }
 
+.arrow-cliked {
+  margin: 3%;
+  width: 1.5em;
+  animation: turn 0.5s;
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.collapse {
+  text-align: justify;
+  padding: 1rem 1rem;
+  background: #ffffff;
+  border-radius: 0 0 10px 10px;
+  margin-top: 0;
+  margin-bottom: 2em;
+  overflow: hidden;
+  animation: slideup 0.2s ease-in-out forwards;
+}
+
+@keyframes slideup {
+  0% {
+    padding: 1rem 1.2rem;
+    background: #f6f6f6;
+    color: #ff6060;
+  }
+  50% {
+    padding: 0.5rem 1.2rem;
+    background: #f6f6f6;
+    color: #f6f6f6;
+  }
+  100% {
+    padding: 0;
+    height: 0;
+    background: #f6f6f6;
+  }
+}
+
+.show {
+  max-height: 500px;
+  background: #f6f6f6;
+  color: #ff6060;
+  animation: slidedown 0.2s ease-in forwards;
+}
+
+@keyframes slidedown {
+  0% {
+    color: #f6f6f6;
+    padding: 0;
+  }
+
+  50% {
+    padding-to: 1rem;
+    background: #f6f6f6;
+    color: #f6f6f6;
+  }
+  100% {
+    height: auto;
+    padding: 2em 1.2rem;
+  }
+}
 .dropdown {
-  margin: 5% 5% 5% 0;
+  margin: 1em 0 1em 0;
 }
