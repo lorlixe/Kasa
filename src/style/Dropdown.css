@@ -14,12 +14,14 @@ h4,
 .arrow {
   margin: 3%;
   width: 1.5em;
+  cursor: pointer;
 }
 
 .arrow-cliked {
   margin: 3%;
   width: 1.5em;
   animation: turn 0.5s;
+  cursor: pointer;
 }
 
 @keyframes turn {

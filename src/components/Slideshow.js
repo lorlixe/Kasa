@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../style/Carrousel.css";
 import { Icon } from "@iconify/react";
 
 const Slideshow = (props) => {
   const [countCaroussel, setCountCaroussel] = useState(0);
+
   const ArrayPicture = props.data.pictures;
 
   function Rigth() {
@@ -12,7 +13,6 @@ const Slideshow = (props) => {
     } else {
       setCountCaroussel(0);
     }
-    console.log(countCaroussel);
   }
 
   function Left() {
@@ -21,7 +21,6 @@ const Slideshow = (props) => {
     } else {
       setCountCaroussel(ArrayPicture.length - 1);
     }
-    console.log(countCaroussel);
   }
 
   return (
@@ -40,6 +39,9 @@ const Slideshow = (props) => {
             onClick={Rigth}
           />
         </div>
+        <p className="CarousselPage">
+          {countCaroussel + 1}/{ArrayPicture.length}
+        </p>
         <img
           className="imgCaroussel"
           src={props.data.pictures[countCaroussel]}

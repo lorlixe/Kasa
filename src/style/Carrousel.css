@@ -12,6 +12,7 @@
 
 .CarrouselArrow {
   font-size: 3em;
+  cursor: pointer;
 }
 
 .Slider_control {
@@ -21,4 +22,11 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
+}
+
+.CarousselPage {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  color: white;
 }
