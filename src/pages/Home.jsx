@@ -1,14 +1,14 @@
 import axios from "axios";
-import Location from "../components/Location";
+import Property from "../components/Property";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [logement, setLogement] = useState([]);
+  const [property, setproperty] = useState([]);
   useEffect(() => {
     axios
       .get("/alldata.json")
       .then((res) => {
-        setLogement(res.data);
+        setproperty(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -21,10 +21,10 @@ function App() {
         <div className="shadow">
           <h2>Chez vous, partout et ailleurs</h2>
         </div>
-      </div>{" "}
+      </div>
       <div className="grille">
-        {logement.map((i, index) => (
-          <Location info={i} key={index} />
+        {property.map((i, index) => (
+          <Property info={i} key={index} />
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slideshow from "../components/Slideshow";
 import Tag from "../components/Tag";
-import "../style/accomodation.css";
+import "../style/Accomodation.css";
 import { Icon } from "@iconify/react";
 import Dropdown from "../components/Dropdown";
 import axios from "axios";

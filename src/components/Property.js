@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../style/Thumb.css";
 import { useNavigate } from "react-router-dom";
 
-const Location = (props) => {
+const Property = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     if (isOpen === true) {
       navigate(`/Logement/${props.info.id}`);
     }
-  }, [isOpen]);
+  }, [isOpen, navigate, props.info.id]);
 
   function click() {
     if (isOpen === false) {
@@ -33,4 +33,4 @@ const Location = (props) => {
   );
 };
 
-export default Location;
+export default Property;
