@@ -1,7 +1,7 @@
 import React from "react";
 import Dropdown from "../components/Dropdown";
 import "../style/Apropos.css";
-const APropos = () => {
+const About = () => {
   return (
     <div>
       <div className="banner-image">
@@ -29,4 +29,4 @@ const APropos = () => {
   );
 };
 
-export default APropos;
+export default About;

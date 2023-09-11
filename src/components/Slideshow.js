@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../style/Carrousel.css";
+import "../style/Slideshow.css";
 import { Icon } from "@iconify/react";
 
 const Slideshow = (props) => {

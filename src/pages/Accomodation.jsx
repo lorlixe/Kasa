@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slideshow from "../components/Slideshow";
 import Tag from "../components/Tag";
-import "../style/FicheLogement.css";
+import "../style/accomodation.css";
 import { Icon } from "@iconify/react";
 import Dropdown from "../components/Dropdown";
 import axios from "axios";
@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import List from "../components/List";
 import { useNavigate } from "react-router-dom";
 
-const FicheLogement = () => {
+const Accomodation = () => {
   const params = useParams();
   const [OneData, setOneData] = useState([]);
   const itemToShow = params.id;
@@ -31,7 +31,7 @@ const FicheLogement = () => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, [itemToShow]);
+  }, [itemToShow, navigate]);
 
   if (OneData.length > 0) {
     const star = parseInt(OneData[0].rating, 10);
@@ -93,4 +93,4 @@ const FicheLogement = () => {
   );
 };
 
-export default FicheLogement;
+export default Accomodation;
