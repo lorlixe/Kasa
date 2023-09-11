@@ -26,7 +26,7 @@ const Slideshow = (props) => {
   return (
     <div className="SectionCarrousel">
       <div className="Carrousel">
-        <div class="Slider_control">
+        <div className="Slider_control">
           <Icon
             className="CarrouselArrow"
             icon="tabler:chevron-right"
