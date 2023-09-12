@@ -25,28 +25,31 @@ const Slideshow = (props) => {
 
   return (
     <div className="SectionCarrousel">
-      <div className="Carrousel">
-        <div className="Slider_control">
-          <Icon
-            className="CarrouselArrow"
-            icon="tabler:chevron-right"
-            rotate={2}
-            onClick={Left}
-          />
-          <Icon
-            className="CarrouselArrow"
-            icon="tabler:chevron-right"
-            onClick={Rigth}
+      <div className="AccomodationBanner">
+        <div className="Carrousel">
+          <div className="Slider_control">
+            <Icon
+              className="CarrouselArrow"
+              icon="tabler:chevron-right"
+              rotate={2}
+              onClick={Left}
+            />
+            <Icon
+              className="CarrouselArrow"
+              icon="tabler:chevron-right"
+              onClick={Rigth}
+            />
+          </div>
+          <img
+            className="imgCaroussel"
+            src={props.data.pictures[countCaroussel]}
+            alt={props.data.title}
           />
         </div>
+
         <p className="CarousselPage">
           {countCaroussel + 1}/{ArrayPicture.length}
         </p>
-        <img
-          className="imgCaroussel"
-          src={props.data.pictures[countCaroussel]}
-          alt={props.data.title}
-        />
       </div>
     </div>
   );

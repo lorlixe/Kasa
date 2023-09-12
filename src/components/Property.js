@@ -6,17 +6,13 @@ const Property = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    if (isOpen === true) {
+    if (isOpen) {
       navigate(`/Logement/${props.info.id}`);
     }
   }, [isOpen, navigate, props.info.id]);
 
   function click() {
-    if (isOpen === false) {
-      setIsOpen(true);
-    } else {
-      setIsOpen(false);
-    }
+    setIsOpen(isOpen ? false : true);
   }
 
   return (
