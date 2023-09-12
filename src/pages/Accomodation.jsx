@@ -22,9 +22,8 @@ const Accomodation = () => {
       .get("/alldata.json")
       .then(({ data }) => {
         const findData = data.find((item) => item.id === itemToShow);
-        if (findData !== undefined) {
+        if (findData) {
           setOneData(findData);
-          // console.log(OneData);
         } else {
           navigate("/error");
         }
