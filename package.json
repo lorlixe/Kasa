@@ -22,7 +22,7 @@
         "heroku-postbuild": "npm run install-client && npm run build"
     },
     "engines": {
-        "node": "18.16.0"
+        "node": "18.x"
     },
     "eslintConfig": {
         "extends": [
