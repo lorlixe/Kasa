@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Error from "./pages/Error";
+import Error from "./pages/Error.jsx";
 import Accomodation from "./pages/Accomodation";
 import About from "./pages/About";
 import Nav from "./components/Nav";
